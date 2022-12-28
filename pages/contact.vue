@@ -1,0 +1,13 @@
+<template>
+  <nuxt-layout>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScuByL4_KEgxbubaXRQsPrIWrQ9a6iTdv_uuesI698vACp1cg/viewform?embedded=true"
+      width="100%"
+      height="1776px"
+      frameborder="0"
+      marginheight="50"
+      marginwidth="50"
+      >読み込んでいます…</iframe
+    >
+  </nuxt-layout>
+</template>
