@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import { useColors } from "vuestic-ui";
+const { getColor } = useColors();
 const { $title, $meta } = useNuxtApp();
+const primary = ref(getColor("primary"));
+const textPrimary = ref(getColor("textPrimary"));
+const backgroundPrimary = ref(getColor("backgroundPrimary"));
 </script>
+
 <template>
   <nuxt-layout>
     <content-doc v-slot="{ doc }">
@@ -24,24 +30,44 @@ const { $title, $meta } = useNuxtApp();
   </nuxt-layout>
 </template>
 
-<style>
+<style lang="scss">
 .markdown-body {
-  background-color: #f6f6f6;
-}
-
-.markdown-body {
+  color: v-bind(textPrimary);
+  background-color: v-bind(backgroundPrimary);
   padding: 2em;
-}
 
-.markdown-body > p {
-  text-indent: 1em;
-}
+  a {
+    color: v-bind(textPrimary);
 
-.markdown-body > ul li {
-  list-style-type: circle;
-}
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
-.markdown-body > ul li ul li {
-  list-style-type: square;
+  > p {
+    text-indent: 1em;
+    a {
+      color: v-bind(primary);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  > ul li {
+    list-style-type: disc;
+    a {
+      color: v-bind(primary);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    > ul li {
+      list-style-type: circle;
+      > ul li {
+        list-style-type: square;
+      }
+    }
+  }
 }
 </style>

@@ -24,6 +24,10 @@ tags:
   - エンジニア
   - Typescript
   - Vue.js
+---
+::
+::link-buttons
+---
 links:
   - name: "contact"
     icon: "mdi-email"
