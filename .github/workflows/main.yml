@@ -7,19 +7,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    	
       - uses: actions/checkout@v3
-      # Node
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 'latest'
-
       - name: Install
         run: npm ci
       - name: Build
         run: npm run generate'
-          
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
