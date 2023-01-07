@@ -34,29 +34,36 @@ const getImagePath = (route: string, imagePath: string) => {
 <template>
   <div class="m-10">
     <text-divider>{{ title }}</text-divider>
-    <div class="flex flex-wrap mt-10 md:ml-3 md:mr-3 lg:ml-5 lg:mr-5">
+    <div class="flex flex-wrap mt-10 md:ml-2 md:mr-2 lg:ml-5 lg:mr-5">
       <va-card
         v-for="(content, index) in contents"
-        :class="`${width} m-4 popup`"
+        :class="`${width} m-4 popup self-start`"
       >
+        <va-badge overlap :text="index === 0 ? 'latest' : ''" class="z-10" />
         <nuxt-link :to="content._path">
-          <va-badge overlap :text="index === 0 ? 'latest' : ''" class="z-10" />
-          <va-image
-            class="-top-4"
-            :src="getImagePath($route.fullPath, content.image)"
-          />
-          <va-card-title
-            class="font-body text-lg"
-            :style="`color: ${useColors().getColor(
-              'textPrimary'
-            )}; a:hover{ text-decolation: none }`"
-            >{{ content.title }}</va-card-title
-          >
-          <va-card-content class="font-body text-sm">
-            <div v-if="content.tags" class="font-body">
-              <tag-cloud :tags="content.tags" />
+          <va-card-block class="mb-auto">
+            <div v-if="content.icon" :class="`text-center`">
+              <va-avatar :icon="content.icon" size="large" color="primary" />
             </div>
-          </va-card-content>
+            <va-image
+              v-if="content.image"
+              class="-top-4"
+              :src="getImagePath($route.fullPath, content.image)"
+          /></va-card-block>
+          <va-card-block>
+            <va-card-title
+              class="font-body text-lg"
+              :style="`color: ${useColors().getColor(
+                'textPrimary'
+              )}; a:hover{ text-decolation: none }`"
+              >{{ content.title }}</va-card-title
+            >
+            <va-card-content class="font-body text-sm">
+              <div v-if="content.tags" class="font-body">
+                <tag-cloud :tags="content.tags" />
+              </div>
+            </va-card-content>
+          </va-card-block>
         </nuxt-link>
       </va-card>
     </div>

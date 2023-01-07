@@ -5,7 +5,7 @@
     <main class="md:pl-2 md:pr-2 lg:pl-12 lg:pr-12">
       <slot />
     </main>
-    <app-footer />
+    <app-footer class="fixed bottom-0" />
   </div>
 </template>
 

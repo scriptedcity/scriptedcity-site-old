@@ -14,16 +14,24 @@ const { $categories } = useNuxtApp();
       </va-navbar-item>
     </template>
     <template #center>
-      <theme-picker class="w-30"/>
+      <theme-picker class="w-30" />
     </template>
     <template #right>
       <va-button-group>
         <nuxt-link to="/">
-          <va-button><span class="font-half text-lg uppercase">Top</span></va-button>
+          <va-button
+            ><span class="font-half lg:text-lg md:text-md uppercase"
+              >Top</span
+            ></va-button
+          >
         </nuxt-link>
         <template v-for="category in $categories">
           <nuxt-link :to="`/posts/${category}/`">
-            <va-button><span class="font-half text-lg uppercase">{{ category }}</span></va-button>
+            <va-button
+              ><span class="font-half lg:text-lg md:text-md uppercase">{{
+                category
+              }}</span></va-button
+            >
           </nuxt-link>
         </template>
       </va-button-group>
