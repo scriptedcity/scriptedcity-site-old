@@ -10,14 +10,33 @@ const backgroundPrimary = ref(getColor("backgroundPrimary"));
 <template>
   <nuxt-layout>
     <content-doc v-slot="{ doc }">
-      <ogp-head :title="`${$title} / ${doc.title}`" :description="doc.description" :url="`${$meta.url}${doc._path}`"
-        :image="`${$meta.url}/${doc.image}`" />
+      <ogp-head
+        :title="`${$title} / ${doc.title}`"
+        :description="doc.description"
+        :url="`${$meta.url}${doc._path}`"
+        :image="`${$meta.url}/${doc.image}`"
+      />
       <va-breadcrumbs class="mt-5">
-        <va-breadcrumbs-item v-for="path in doc._path.split('/').slice(0, -1)" class="capitalize" :label="path" />
+        <va-breadcrumbs-item
+          v-for="path in doc._path.split('/').slice(0, -1)"
+          class="capitalize"
+          :label="path"
+        />
         <va-breadcrumbs-item :label="doc.title" />
       </va-breadcrumbs>
       <tag-cloud class="m-5" :tags="doc.tags" />
       <date-display :date="doc.date" />
+      <a
+        :href="`https://twitter.com/intent/tweet?text=${doc.title}&url=${$meta.url}${doc._path}`"
+      >
+        <va-button
+          size="small"
+          icon="mdi-twitter"
+          color="#1DA1F2"
+          class="mr-3 mb-2"
+          >Tweet</va-button
+        >
+      </a>
       <content-renderer-markdown :value="doc" class="markdown-body font-half" />
     </content-doc>
   </nuxt-layout>
@@ -37,7 +56,7 @@ const backgroundPrimary = ref(getColor("backgroundPrimary"));
     }
   }
 
-  >p {
+  > p {
     text-indent: 1em;
 
     a {
@@ -49,7 +68,7 @@ const backgroundPrimary = ref(getColor("backgroundPrimary"));
     }
   }
 
-  >ul li {
+  > ul li {
     list-style-type: disc;
 
     a {
@@ -60,10 +79,10 @@ const backgroundPrimary = ref(getColor("backgroundPrimary"));
       }
     }
 
-    >ul li {
+    > ul li {
       list-style-type: circle;
 
-      >ul li {
+      > ul li {
         list-style-type: square;
       }
     }
