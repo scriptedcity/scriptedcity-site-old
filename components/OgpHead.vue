@@ -18,13 +18,12 @@ const metaTags = {
   description: props.description ?? $meta.description,
   url: props.url ?? $meta.url,
   siteName: props.siteName ?? $meta.siteName,
-  image: props.image ?? $meta.image,
+  image: props.image || props.image !== "" ? props.image : $meta.image,
   twitterCard: props.twitterCard ?? $meta.twitterCard,
   twitterSite: props.twitterSite ?? $meta.twitterSite,
 };
 </script>
 <template>
-
   <Head>
     <title>{{ $title }}</title>
     <Meta property="og:type" :content="metaTags.type" />

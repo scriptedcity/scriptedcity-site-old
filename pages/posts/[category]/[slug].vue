@@ -14,7 +14,7 @@ const backgroundPrimary = ref(getColor("backgroundPrimary"));
         :title="`${$title} / ${doc.title}`"
         :description="doc.description"
         :url="`${$meta.url}${doc._path}`"
-        :image="`${$meta.url}/${doc.image}`"
+        :image="doc.image ? `${$meta.url}/${doc.image}` : ''"
       />
       <va-breadcrumbs class="mt-5">
         <va-breadcrumbs-item

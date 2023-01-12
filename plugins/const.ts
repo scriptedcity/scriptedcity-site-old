@@ -12,7 +12,7 @@ export default defineNuxtPlugin(() => {
       twitterSite: "@millstones",
     },
     categories: ["works", "discography", "songs", "texts"],
-    copyright: "2022 millstones",
+    copyright: "2022-2023 millstones",
   };
   return { provide: constants };
 });
