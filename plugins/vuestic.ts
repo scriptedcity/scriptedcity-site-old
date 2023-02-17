@@ -2,9 +2,9 @@ import { createVuestic, createIconsConfig } from "vuestic-ui";
 const fonts = [
   {
     name: /mdi-(.*)/,
-    resolveFromRegex: (icon) => ({
+    resolveFromRegex: (icon: string) => ({
       class: `mdi mdi-${icon}`,
-      tag: 'span'
+      tag: "span",
     }),
   },
 ];
