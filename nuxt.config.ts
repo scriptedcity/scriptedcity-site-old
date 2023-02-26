@@ -10,6 +10,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "ja" },
+      meta: [
+        {
+          name: "google-site-verification",
+          content: "xBmY1GsnUe-RXaqgUAkSF9bTpqEx-r0bs0A8dtQDOho",
+        },
+      ],
       link: [
         {
           rel: "preconnect",
