@@ -99,4 +99,4 @@ links:
 
 - このサイトは millstones の活動を紹介する個人サイトです。
 - Vue.js、Nuxt.js、Nuxt/Content、Vuestic で制作しました。
-
+- 一部のリンクはAmazonアフィリエイトのリンクになっています。
