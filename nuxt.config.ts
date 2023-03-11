@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     "@mdi/font/css/materialdesignicons.min.css",
     "github-markdown-css/github-markdown-light.css",
   ],
+  nitro: {
+    prerender: {
+      routes: ["/sitemap.xml"],
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: "ja" },
