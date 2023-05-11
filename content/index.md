@@ -9,8 +9,8 @@ name: millstones
 kana: ミルストーンズ
 avatarImageUrl: avatar/millstones.jpg
 status:
-  name: ご依頼受け付けます
-  color: success
+  name: ご依頼はお時間かかります
+  color: warning
 avatarSize: 128px
 tags:
   - 作曲
@@ -42,6 +42,9 @@ links:
   - name: "nicovideo"
     icon: "mdi-television-classic"
     href: "https://www.nicovideo.jp/user/669463/mylist/1925013"
+  - name: "GitHub"
+    icon: "mdi-github"
+    href: "https://github.com/scriptedcity"
 ---
 ::
 
