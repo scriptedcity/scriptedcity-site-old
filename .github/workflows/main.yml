@@ -8,15 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
       #Node
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "^19.0.0"
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run generate
+        run: pnpm run generate
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
