@@ -42,15 +42,15 @@ const getImagePath = (route: string, imagePath: string) => {
         <va-badge overlap :text="index === 0 ? 'latest' : ''" class="z-10" />
         <nuxt-link :to="content._path">
           <va-card-block class="mb-auto">
-            <div v-if="content.icon" :class="`text-center`">
+            <div v-if="content.icon" :class="`text-center mt-16 h-[7.6em]`">
               <va-avatar :icon="content.icon" size="large" color="primary" />
             </div>
             <va-image
               v-if="content.image"
-              class="-top-4"
+              :lazy="true"
+              :class="`-top-4 h-48`"
               :src="getImagePath($route.fullPath, content.image)"
-          /></va-card-block>
-          <va-card-block>
+            />
             <va-card-title
               class="font-body text-lg"
               :style="`color: ${useColors().getColor(
